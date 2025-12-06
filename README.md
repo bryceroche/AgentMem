@@ -15,7 +15,7 @@ Session 2: "Why did we choose X again?"
 
 ## The Solution
 
-AgentMem provides four core tools:
+AgentMem provides five core tools:
 
 | Command | Purpose |
 |---------|---------|
@@ -23,6 +23,7 @@ AgentMem provides four core tools:
 | `am-context` | Track decisions, findings, and notes per issue |
 | `am-outcome` | Record what worked/didn't for emergent learning |
 | `am-journal` | Interactive journal setup with templates |
+| `am-stats` | Visualize outcomes with ASCII charts |
 
 ## Quick Start
 
@@ -152,6 +153,35 @@ am-journal show
 - `standard` - Good for most projects
 - `consulting` - For client work (+ background, deliverables)
 - `oss` - For open source (+ roadmap, contributing)
+
+### am-stats
+Visualize outcomes with ASCII charts.
+
+```bash
+# Full dashboard
+am-stats
+
+# Individual views
+am-stats summary          # Quick stats
+am-stats approaches       # Success rate by approach (bar chart)
+am-stats complexity       # Success rate by complexity
+am-stats timeline         # Outcomes over time (last 14 days)
+am-stats streak           # Current success/failure streak
+```
+
+**Example output:**
+```
+📈 SUCCESS RATE BY APPROACH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  implement-iterate    █████████████████████████ 12/12 (100%)
+  research-first       ██████░░░░░░░░░░░░░░░░░░░ 3/3 (100%)
+  collaborative        ██████░░░░░░░░░░░░░░░░░░░ 3/3 (100%)
+
+🔥 CURRENT STREAK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🎉 20 successful in a row!
+  🏆 Best ever: 20 successes
+```
 
 ## Requirements
 

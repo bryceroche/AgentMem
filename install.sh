@@ -80,6 +80,7 @@ SCRIPTS=(
     "am-context:am-context.sh:Rich context trails per issue"
     "am-outcome:am-outcome.sh:Outcome tracking and pattern learning"
     "am-journal:am-journal.sh:Interactive journal setup and management"
+    "am-stats:am-stats.sh:Visualize outcomes with ASCII charts"
 )
 
 for entry in "${SCRIPTS[@]}"; do
