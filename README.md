@@ -15,7 +15,7 @@ Session 2: "Why did we choose X again?"
 
 ## The Solution
 
-AgentMem provides five core tools:
+AgentMem provides six core tools:
 
 | Command | Purpose |
 |---------|---------|
@@ -24,6 +24,7 @@ AgentMem provides five core tools:
 | `am-outcome` | Record what worked/didn't for emergent learning |
 | `am-journal` | Interactive journal setup with templates |
 | `am-stats` | Visualize outcomes with ASCII charts |
+| `am-search` | Enhanced search with fuzzy matching |
 
 ## Quick Start
 
@@ -182,6 +183,34 @@ am-stats streak           # Current success/failure streak
   🎉 20 successful in a row!
   🏆 Best ever: 20 successes
 ```
+
+### am-search
+Enhanced search with fuzzy matching and ranked results.
+
+```bash
+# Basic search
+am-search postgres
+
+# Multi-term (AND by default)
+am-search database migration
+
+# OR logic
+am-search --or redis postgres
+
+# Fuzzy matching (finds similar words)
+am-search --fuzzy postgre
+
+# Filter by type
+am-search --type decision approach
+am-search --type finding api
+```
+
+**Features:**
+- Fuzzy matching with `--fuzzy`
+- Multi-term AND/OR search
+- Type filtering (note, finding, decision, outcome)
+- Ranked results (most relevant first)
+- Searches context, outcomes, and issue titles
 
 ## Requirements
 

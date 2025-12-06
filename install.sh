@@ -81,6 +81,7 @@ SCRIPTS=(
     "am-outcome:am-outcome.sh:Outcome tracking and pattern learning"
     "am-journal:am-journal.sh:Interactive journal setup and management"
     "am-stats:am-stats.sh:Visualize outcomes with ASCII charts"
+    "am-search:am-search.sh:Enhanced search with fuzzy matching"
 )
 
 for entry in "${SCRIPTS[@]}"; do
