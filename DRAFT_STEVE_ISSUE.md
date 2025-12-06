@@ -4,22 +4,22 @@
 
 ---
 
-**Title:** `[Discussion] AgentMem - Project memory layer for beads`
+**Title:** `AgentMem - Project memory layer for Beads`
 
 **Body:**
 
 Hi Steve,
 
-I've been using beads for a few weeks and love `bd prime` for workflow context. I built some complementary scripts that add **project-specific memory** - the stuff that's unique to each project rather than universal beads workflow.
+I've been using beads for a few weeks and love `bd prime` for workflow context.  I built some complementary scripts that add **project-specific memory** - the stuff that's unique to each project rather than universal beads workflow.
 
 ## What bd prime does well
 - Workflow commands and rules
 - Git sync protocol
 - Session close checklist
 
-## What I kept forgetting between sessions
+## What Claude kept forgetting between sessions
 - User preferences ("ASCII diagrams only", "wife reviews architecture docs")
-- Why I made specific decisions on issues
+- Why I made certain decisions on issues
 - What approaches worked/failed on past issues
 - Rich context beyond issue title/description
 
@@ -38,17 +38,6 @@ Example `am-prime` output shows:
 - In-progress and open issues
 
 These follow your EXTENDING.md pattern - they read from beads.db but write to separate JSON files.
-
-## External Validation
-
-I tested this with another AI (Cursor's default) on a fresh machine. Their assessment:
-
-> "The tools are well-designed and solve a real problem. The integration between beads (issue tracking) and AgentMem (memory layer) is elegant."
-
-Key feedback:
-- Context persistence is the biggest win
-- Structured context (notes, findings, decisions) is "brilliant"
-- Outcome learning by approach could lead to real insights
 
 ## Questions
 
