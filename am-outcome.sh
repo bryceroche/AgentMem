@@ -66,11 +66,10 @@ record_outcome() {
     local approach="${3:-unknown}"
     local complexity="${4:-medium}"
 
-    # Get issue details from database
-    local title=$(sqlite3 "$DB" "SELECT title FROM issues WHERE id='$issue'" 2>/dev/null)
-    local status=$(sqlite3 "$DB" "SELECT status FROM issues WHERE id='$issue'" 2>/dev/null)
-    local created=$(sqlite3 "$DB" "SELECT created_at FROM issues WHERE id='$issue'" 2>/dev/null)
-    local updated=$(sqlite3 "$DB" "SELECT updated_at FROM issues WHERE id='$issue'" 2>/dev/null)
+    # Get issue details from database (single query - 4x faster)
+    local title status created updated
+    IFS='|' read -r title status created updated <<< "$(sqlite3 "$DB" \
+        "SELECT title, status, created_at, updated_at FROM issues WHERE id='$issue'" 2>/dev/null)"
 
     if [ -z "$title" ]; then
         echo -e "${RED}Issue not found: $issue${NC}"

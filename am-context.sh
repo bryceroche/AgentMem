@@ -68,9 +68,8 @@ show_context() {
     local issue="$1"
     local filter="$2"
 
-    # Get issue details
-    TITLE=$(sqlite3 "$DB" "SELECT title FROM issues WHERE id='$issue'" 2>/dev/null)
-    STATUS=$(sqlite3 "$DB" "SELECT status FROM issues WHERE id='$issue'" 2>/dev/null)
+    # Get issue details (single query)
+    IFS='|' read -r TITLE STATUS <<< "$(sqlite3 "$DB" "SELECT title, status FROM issues WHERE id='$issue'" 2>/dev/null)"
 
     echo ""
     echo -e "${BOLD}📋 Context: $issue${NC}"

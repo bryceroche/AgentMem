@@ -192,8 +192,13 @@ echo -e "${CYAN}═══ WORK STATUS ═══${NC}"
 echo ""
 
 if [ -f "$DB" ]; then
+    # Get counts in single query (2x faster)
+    IFS='|' read -r IN_PROG OPEN <<< "$(sqlite3 "$DB" \
+        "SELECT
+            (SELECT COUNT(*) FROM issues WHERE status='in_progress'),
+            (SELECT COUNT(*) FROM issues WHERE status='open')" 2>/dev/null)"
+
     # In Progress
-    IN_PROG=$(sqlite3 "$DB" "SELECT COUNT(*) FROM issues WHERE status='in_progress'")
     echo -e "${GREEN}▶ In Progress: $IN_PROG${NC}"
     sqlite3 -separator '|' "$DB" "
         SELECT id, title FROM issues
@@ -206,7 +211,6 @@ if [ -f "$DB" ]; then
     echo ""
 
     # Ready to work (open, no blockers)
-    OPEN=$(sqlite3 "$DB" "SELECT COUNT(*) FROM issues WHERE status='open'")
     echo -e "${YELLOW}○ Open: $OPEN${NC}"
     sqlite3 -separator '|' "$DB" "
         SELECT id, title FROM issues
