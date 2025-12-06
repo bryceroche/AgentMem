@@ -79,6 +79,7 @@ SCRIPTS=(
     "am-prime:am-prime.sh:Session recovery and context loading"
     "am-context:am-context.sh:Rich context trails per issue"
     "am-outcome:am-outcome.sh:Outcome tracking and pattern learning"
+    "am-journal:am-journal.sh:Interactive journal setup and management"
 )
 
 for entry in "${SCRIPTS[@]}"; do

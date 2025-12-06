@@ -15,13 +15,14 @@ Session 2: "Why did we choose X again?"
 
 ## The Solution
 
-AgentMem provides three core tools:
+AgentMem provides four core tools:
 
 | Command | Purpose |
 |---------|---------|
 | `am-prime` | Load all context at session start |
 | `am-context` | Track decisions, findings, and notes per issue |
 | `am-outcome` | Record what worked/didn't for emergent learning |
+| `am-journal` | Interactive journal setup with templates |
 
 ## Quick Start
 
@@ -126,6 +127,31 @@ am-outcome stats
 am-outcome stats --by-approach
 am-outcome recent 5
 ```
+
+### am-journal
+Interactive journal setup and management.
+
+```bash
+# Interactive setup (prompts for project name and template)
+am-journal init
+
+# Use a specific template
+am-journal init --template consulting
+
+# Quick additions
+am-journal add-pref "ASCII diagrams only"
+am-journal add-decision "Use PostgreSQL" "Better for our scale"
+am-journal add-note "Completed API refactor"
+
+# View current journal
+am-journal show
+```
+
+**Templates:**
+- `minimal` - Just preferences and decisions
+- `standard` - Good for most projects
+- `consulting` - For client work (+ background, deliverables)
+- `oss` - For open source (+ roadmap, contributing)
 
 ## Requirements
 
