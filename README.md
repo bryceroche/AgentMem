@@ -95,6 +95,7 @@ Output includes:
 - Outcome statistics
 - Open/in-progress issues
 - Recently modified files
+- **AI Context Triggers** - Guidance for when to record decisions, findings, and outcomes
 
 ### am-context
 Rich context trails per issue.
@@ -211,6 +212,26 @@ am-search --type finding api
 - Type filtering (note, finding, decision, outcome)
 - Ranked results (most relevant first)
 - Searches context, outcomes, and issue titles
+
+## AI Auto-Context
+
+AgentMem helps AI agents know when to record context by including **AI Context Triggers** in the `am-prime` output. When an agent reads this at session start, it learns:
+
+**Record a DECISION when:**
+- Choosing between approaches
+- Making architecture choices
+- Picking a library or tool
+
+**Record a FINDING when:**
+- Discovering how existing code works
+- Finding undocumented behavior
+- Learning something that took effort
+
+**Record an OUTCOME when:**
+- Closing an issue (success or failure)
+- Completing a task
+
+This "soft hook" approach embeds guidance directly in the session context, so agents naturally follow best practices without requiring explicit tool integration.
 
 ## Requirements
 

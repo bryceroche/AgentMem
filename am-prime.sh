@@ -275,6 +275,29 @@ if [ -f "$BOOKMARKS" ]; then
 fi
 
 # ═══════════════════════════════════════════════════════════════════════
+# SECTION 7: AI CONTEXT TRIGGERS - When to record context
+# ═══════════════════════════════════════════════════════════════════════
+echo -e "${CYAN}═══ AI CONTEXT TRIGGERS ═══${NC}"
+echo ""
+echo -e "${YELLOW}Record a DECISION when you:${NC}"
+echo "  • Choose between approaches (e.g., 'Using X instead of Y')"
+echo "  • Make architecture choices (e.g., 'Put this in services/ not utils/')"
+echo "  • Pick a library or tool (e.g., 'Using lodash for deep merge')"
+echo "  → am-context <issue> --add-decision \"<what>\" --why \"<reason>\""
+echo ""
+echo -e "${YELLOW}Record a FINDING when you:${NC}"
+echo "  • Discover how existing code works"
+echo "  • Find undocumented behavior or gotchas"
+echo "  • Learn something that took effort to figure out"
+echo "  → am-context <issue> --add-finding \"<discovery>\" --confidence high|medium|low"
+echo ""
+echo -e "${YELLOW}Record an OUTCOME when you:${NC}"
+echo "  • Close an issue (success or failure)"
+echo "  • Complete a task to learn what worked"
+echo "  → am-outcome record <issue> --success|--failure"
+echo ""
+
+# ═══════════════════════════════════════════════════════════════════════
 # FOOTER
 # ═══════════════════════════════════════════════════════════════════════
 echo "─────────────────────────────────────────────────────────────────────"
@@ -284,4 +307,6 @@ echo "  bd ready                    - Issues ready to work"
 echo "  bd show <id>                - View issue details"
 echo "  am-context <id>             - View/add rich context"
 echo "  am-outcome stats            - View outcome statistics"
+echo "  am-search <query>           - Search all context"
+echo "  am-stats                    - View outcomes dashboard"
 echo ""
