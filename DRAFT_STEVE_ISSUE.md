@@ -4,7 +4,7 @@
 
 ---
 
-**Title:** `AgentMem - Project memory layer for Beads`
+**Title:** `bdx (beads extensions) - Project memory layer`
 
 **Body:**
 
@@ -23,15 +23,18 @@ I've been using beads for a few weeks and love `bd prime` for workflow context. 
 - What approaches worked/failed on past issues
 - Rich context beyond issue title/description
 
-## What I built (3 bash scripts)
+## What I built (bash scripts, bdx = "beads extensions")
 
 | Command | Purpose | Storage |
 |---------|---------|---------|
-| `am-prime` | Load project context at session start | Reads .beads/*.json |
-| `am-context` | Track findings/decisions/notes per issue | .beads/context.json |
-| `am-outcome` | Record success/failure + approach when closing | .beads/outcomes.jsonl |
+| `bdx-prime` | Load project context at session start | Reads .beads/*.json |
+| `bdx-context` | Track findings/decisions/notes per issue | .beads/context.json |
+| `bdx-outcome` | Record success/failure + approach when closing | .beads/outcomes.jsonl |
+| `bdx-journal` | Manage project journal | .beads/JOURNAL.md |
+| `bdx-search` | Fuzzy search across issues + context | .beads/*.json |
+| `bdx-stats` | ASCII visualizations of outcomes | .beads/outcomes.jsonl |
 
-Example `am-prime` output shows:
+Example `bdx-prime` output shows:
 - User preferences from JOURNAL.md
 - Recent decisions with rationale
 - Outcome stats (success rates, patterns by approach)
