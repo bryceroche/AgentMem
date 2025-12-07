@@ -23,6 +23,8 @@ case "$1" in
     -h|--help) show_help ;;
 esac
 
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-stats" "" "$@"
 OUTCOMES_FILE=".beads/outcomes.jsonl"
 
 # Colors

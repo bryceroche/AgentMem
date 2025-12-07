@@ -5,6 +5,8 @@
 set -e
 
 BEADS_DIR=".beads"
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-surprise" "" "$@"
 OUTCOMES_FILE="$BEADS_DIR/outcomes.jsonl"
 CONTEXT_FILE="$BEADS_DIR/context.json"
 SURPRISE_LOG="$BEADS_DIR/surprise.jsonl"

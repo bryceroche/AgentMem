@@ -7,6 +7,8 @@
 
 set -e
 
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-standup" "" "$@"
 DB=".beads/beads.db"
 COPY_TO_CLIPBOARD=false
 
