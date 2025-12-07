@@ -77,11 +77,16 @@ fi
 # Core scripts to install (bdx- prefix = Beads eXtensions)
 SCRIPTS=(
     "bdx-prime:bdx-prime.sh:Session recovery and context loading"
+    "bdx-prime-plus:bdx-prime-plus.sh:Full session start (prime + journal + outcomes)"
     "bdx-context:bdx-context.sh:Rich context trails per issue"
     "bdx-outcome:bdx-outcome.sh:Outcome tracking and pattern learning"
     "bdx-journal:bdx-journal.sh:Interactive journal setup and management"
     "bdx-stats:bdx-stats.sh:Visualize outcomes with ASCII charts"
     "bdx-search:bdx-search.sh:Enhanced search with fuzzy matching"
+    "bdx-surprise:bdx-surprise.sh:Statistical surprise detection (2σ outliers)"
+    "bdx-standup:bdx-standup.sh:Generate daily standup report"
+    "bdx-today:bdx-today.sh:Daily accomplishments summary"
+    "bdx-similar:bdx-similar.sh:Find similar/duplicate issues"
 )
 
 for entry in "${SCRIPTS[@]}"; do
@@ -175,9 +180,16 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
 fi
 
 echo -e "${GREEN}Available commands:${NC}"
-echo "  bdx-prime      Load session context (run at start)"
+echo "  bdx-prime-plus Full session start (recommended)"
+echo "  bdx-prime      Load session context"
 echo "  bdx-context    View/add context for issues"
 echo "  bdx-outcome    Track outcomes and patterns"
+echo "  bdx-surprise   Detect statistical outliers (2σ surprise)"
+echo "  bdx-standup    Generate daily standup report"
+echo "  bdx-today      Daily accomplishments summary"
+echo "  bdx-similar    Find similar/duplicate issues"
+echo "  bdx-search     Fuzzy search across issues"
+echo "  bdx-stats      ASCII outcome visualizations"
 echo ""
 echo -e "${CYAN}Quick start:${NC}"
 echo "  1. Run 'bdx-prime' at session start"
