@@ -62,7 +62,7 @@ echo ""
 echo -e "${YELLOW}Installing scripts...${NC}"
 
 # Determine source (local or download)
-if [ "$1" = "--local" ] || [ -f "$(dirname "$0")/am-prime.sh" ]; then
+if [ "$1" = "--local" ] || [ -f "$(dirname "$0")/bd-prime.sh" ]; then
     SOURCE_DIR="$(dirname "$0")"
     echo "  Installing from local directory: $SOURCE_DIR"
 else
@@ -74,14 +74,14 @@ else
     exit 1
 fi
 
-# Core scripts to install
+# Core scripts to install (bm- prefix = Beads Memory)
 SCRIPTS=(
-    "am-prime:am-prime.sh:Session recovery and context loading"
-    "am-context:am-context.sh:Rich context trails per issue"
-    "am-outcome:am-outcome.sh:Outcome tracking and pattern learning"
-    "am-journal:am-journal.sh:Interactive journal setup and management"
-    "am-stats:am-stats.sh:Visualize outcomes with ASCII charts"
-    "am-search:am-search.sh:Enhanced search with fuzzy matching"
+    "bm-prime:bm-prime.sh:Session recovery and context loading"
+    "bm-context:bm-context.sh:Rich context trails per issue"
+    "bm-outcome:bm-outcome.sh:Outcome tracking and pattern learning"
+    "bm-journal:bm-journal.sh:Interactive journal setup and management"
+    "bm-stats:bm-stats.sh:Visualize outcomes with ASCII charts"
+    "bm-search:bm-search.sh:Enhanced search with fuzzy matching"
 )
 
 for entry in "${SCRIPTS[@]}"; do
@@ -175,14 +175,14 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
 fi
 
 echo -e "${GREEN}Available commands:${NC}"
-echo "  am-prime      Load session context (run at start)"
-echo "  am-context    View/add context for issues"
-echo "  am-outcome    Track outcomes and patterns"
+echo "  bm-prime      Load session context (run at start)"
+echo "  bm-context    View/add context for issues"
+echo "  bm-outcome    Track outcomes and patterns"
 echo ""
 echo -e "${CYAN}Quick start:${NC}"
-echo "  1. Run 'am-prime' at session start"
-echo "  2. Use 'am-context <issue> --add \"note\"' to track context"
-echo "  3. Use 'am-outcome record <issue>' when closing issues"
+echo "  1. Run 'bm-prime' at session start"
+echo "  2. Use 'bm-context <issue> --add \"note\"' to track context"
+echo "  3. Use 'bm-outcome record <issue>' when closing issues"
 echo ""
 echo -e "${GREEN}AgentMem installed successfully! 🧠${NC}"
 echo ""
