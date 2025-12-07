@@ -1,32 +1,32 @@
 #!/bin/bash
-# bm-context - Rich context trails for beads issues
+# bdx-context - Rich context trails for beads issues
 #
 # Enhanced with: findings, decisions, tags, related issues, blockers
 
 show_help() {
-    echo "bm-context - Rich context trails for beads issues"
+    echo "bdx-context - Rich context trails for beads issues"
     echo ""
     echo "Usage:"
-    echo "  bm-context <issue>                    Show all context for issue"
-    echo "  bm-context <issue> --add \"text\"       Add a note"
-    echo "  bm-context <issue> --add-finding \"text\" [--source src] [--confidence high|medium|low]"
-    echo "  bm-context <issue> --add-decision \"what\" --why \"reason\" [--alternatives \"a,b,c\"]"
-    echo "  bm-context <issue> --add-tag \"tag1,tag2\""
-    echo "  bm-context <issue> --link \"other-issue\""
-    echo "  bm-context <issue> --resolved \"blocker\" --resolution \"how fixed\""
+    echo "  bdx-context <issue>                    Show all context for issue"
+    echo "  bdx-context <issue> --add \"text\"       Add a note"
+    echo "  bdx-context <issue> --add-finding \"text\" [--source src] [--confidence high|medium|low]"
+    echo "  bdx-context <issue> --add-decision \"what\" --why \"reason\" [--alternatives \"a,b,c\"]"
+    echo "  bdx-context <issue> --add-tag \"tag1,tag2\""
+    echo "  bdx-context <issue> --link \"other-issue\""
+    echo "  bdx-context <issue> --resolved \"blocker\" --resolution \"how fixed\""
     echo ""
     echo "Search:"
-    echo "  bm-context --search \"keyword\"        Search across all context"
-    echo "  bm-context --tag \"tagname\"           Find issues by tag"
-    echo "  bm-context --list                    List all issues with context"
+    echo "  bdx-context --search \"keyword\"        Search across all context"
+    echo "  bdx-context --tag \"tagname\"           Find issues by tag"
+    echo "  bdx-context --list                    List all issues with context"
     echo ""
     echo "Options:"
     echo "  -h, --help                           Show this help message"
     echo ""
     echo "Examples:"
-    echo "  bm-context issue-abc --add \"Discovered the API rate limits\""
-    echo "  bm-context issue-abc --add-finding \"Redis is bottleneck\" --confidence high"
-    echo "  bm-context issue-abc --add-decision \"Use PostgreSQL\" --why \"Better for our scale\""
+    echo "  bdx-context issue-abc --add \"Discovered the API rate limits\""
+    echo "  bdx-context issue-abc --add-finding \"Redis is bottleneck\" --confidence high"
+    echo "  bdx-context issue-abc --add-decision \"Use PostgreSQL\" --why \"Better for our scale\""
     exit 0
 }
 
@@ -97,9 +97,9 @@ if not issue_ctx:
     print("  (no context yet)")
     print("")
     print("  Add context with:")
-    print("    bm-context $issue --add \"note\"")
-    print("    bm-context $issue --add-finding \"discovery\"")
-    print("    bm-context $issue --add-decision \"what\" --why \"reason\"")
+    print("    bdx-context $issue --add \"note\"")
+    print("    bdx-context $issue --add-finding \"discovery\"")
+    print("    bdx-context $issue --add-decision \"what\" --why \"reason\"")
     sys.exit(0)
 
 filter_type = "$filter"
@@ -479,25 +479,25 @@ EOF
 # Usage
 usage() {
     echo ""
-    echo -e "${BOLD}bm-context - Rich context trails for beads issues${NC}"
+    echo -e "${BOLD}bdx-context - Rich context trails for beads issues${NC}"
     echo ""
     echo "View context:"
-    echo "  bm-context <issue>                Show all context"
-    echo "  bm-context <issue> --findings     Show only findings"
-    echo "  bm-context <issue> --decisions    Show only decisions"
+    echo "  bdx-context <issue>                Show all context"
+    echo "  bdx-context <issue> --findings     Show only findings"
+    echo "  bdx-context <issue> --decisions    Show only decisions"
     echo ""
     echo "Add context:"
-    echo "  bm-context <issue> --add \"text\"                       Add note"
-    echo "  bm-context <issue> --add-finding \"text\" [--source s] [--confidence high|medium|low]"
-    echo "  bm-context <issue> --add-decision \"what\" --why \"reason\" [--alternatives \"a,b\"]"
-    echo "  bm-context <issue> --add-tag \"tag1,tag2\""
-    echo "  bm-context <issue> --link \"other-issue\""
-    echo "  bm-context <issue> --resolved \"blocker\" --resolution \"how fixed\""
+    echo "  bdx-context <issue> --add \"text\"                       Add note"
+    echo "  bdx-context <issue> --add-finding \"text\" [--source s] [--confidence high|medium|low]"
+    echo "  bdx-context <issue> --add-decision \"what\" --why \"reason\" [--alternatives \"a,b\"]"
+    echo "  bdx-context <issue> --add-tag \"tag1,tag2\""
+    echo "  bdx-context <issue> --link \"other-issue\""
+    echo "  bdx-context <issue> --resolved \"blocker\" --resolution \"how fixed\""
     echo ""
     echo "Search:"
-    echo "  bm-context --search \"keyword\""
-    echo "  bm-context --tag \"tagname\""
-    echo "  bm-context --list"
+    echo "  bdx-context --search \"keyword\""
+    echo "  bdx-context --tag \"tagname\""
+    echo "  bdx-context --list"
     echo ""
 }
 

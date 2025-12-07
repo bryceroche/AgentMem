@@ -74,14 +74,14 @@ else
     exit 1
 fi
 
-# Core scripts to install (bm- prefix = Beads Memory)
+# Core scripts to install (bdx- prefix = Beads eXtensions)
 SCRIPTS=(
-    "bm-prime:bm-prime.sh:Session recovery and context loading"
-    "bm-context:bm-context.sh:Rich context trails per issue"
-    "bm-outcome:bm-outcome.sh:Outcome tracking and pattern learning"
-    "bm-journal:bm-journal.sh:Interactive journal setup and management"
-    "bm-stats:bm-stats.sh:Visualize outcomes with ASCII charts"
-    "bm-search:bm-search.sh:Enhanced search with fuzzy matching"
+    "bdx-prime:bdx-prime.sh:Session recovery and context loading"
+    "bdx-context:bdx-context.sh:Rich context trails per issue"
+    "bdx-outcome:bdx-outcome.sh:Outcome tracking and pattern learning"
+    "bdx-journal:bdx-journal.sh:Interactive journal setup and management"
+    "bdx-stats:bdx-stats.sh:Visualize outcomes with ASCII charts"
+    "bdx-search:bdx-search.sh:Enhanced search with fuzzy matching"
 )
 
 for entry in "${SCRIPTS[@]}"; do
@@ -175,14 +175,14 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
 fi
 
 echo -e "${GREEN}Available commands:${NC}"
-echo "  bm-prime      Load session context (run at start)"
-echo "  bm-context    View/add context for issues"
-echo "  bm-outcome    Track outcomes and patterns"
+echo "  bdx-prime      Load session context (run at start)"
+echo "  bdx-context    View/add context for issues"
+echo "  bdx-outcome    Track outcomes and patterns"
 echo ""
 echo -e "${CYAN}Quick start:${NC}"
-echo "  1. Run 'bm-prime' at session start"
-echo "  2. Use 'bm-context <issue> --add \"note\"' to track context"
-echo "  3. Use 'bm-outcome record <issue>' when closing issues"
+echo "  1. Run 'bdx-prime' at session start"
+echo "  2. Use 'bdx-context <issue> --add \"note\"' to track context"
+echo "  3. Use 'bdx-outcome record <issue>' when closing issues"
 echo ""
 echo -e "${GREEN}AgentMem installed successfully! 🧠${NC}"
 echo ""

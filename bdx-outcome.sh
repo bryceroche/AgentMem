@@ -1,14 +1,14 @@
 #!/bin/bash
-# bm-outcome - Track outcomes of completed issues for emergent learning
+# bdx-outcome - Track outcomes of completed issues for emergent learning
 
 show_help() {
-    echo "bm-outcome - Track outcomes for emergent learning"
+    echo "bdx-outcome - Track outcomes for emergent learning"
     echo ""
     echo "Usage:"
-    echo "  bm-outcome record <issue> [options]   Record outcome when closing issue"
-    echo "  bm-outcome show <issue>               Show outcome for specific issue"
-    echo "  bm-outcome stats [options]            Show aggregate statistics"
-    echo "  bm-outcome recent [n]                 Show n most recent outcomes"
+    echo "  bdx-outcome record <issue> [options]   Record outcome when closing issue"
+    echo "  bdx-outcome show <issue>               Show outcome for specific issue"
+    echo "  bdx-outcome stats [options]            Show aggregate statistics"
+    echo "  bdx-outcome recent [n]                 Show n most recent outcomes"
     echo ""
     echo "Record options:"
     echo "  --success                   Mark as successful (default)"
@@ -24,9 +24,9 @@ show_help() {
     echo "  -h, --help                  Show this help message"
     echo ""
     echo "Examples:"
-    echo "  bm-outcome record issue-abc --success --approach implement-iterate"
-    echo "  bm-outcome record issue-xyz --failure --approach big-bang"
-    echo "  bm-outcome stats --by-approach"
+    echo "  bdx-outcome record issue-abc --success --approach implement-iterate"
+    echo "  bdx-outcome record issue-xyz --failure --approach big-bang"
+    echo "  bdx-outcome stats --by-approach"
     exit 0
 }
 
@@ -329,22 +329,22 @@ EOF
 # Usage
 usage() {
     echo ""
-    echo -e "${BOLD}bm-outcome - Track outcomes for emergent learning${NC}"
+    echo -e "${BOLD}bdx-outcome - Track outcomes for emergent learning${NC}"
     echo ""
     echo "Record:"
-    echo "  bm-outcome record <issue> [--success|--failure] [--approach name] [--complexity low|medium|high]"
+    echo "  bdx-outcome record <issue> [--success|--failure] [--approach name] [--complexity low|medium|high]"
     echo ""
     echo "View:"
-    echo "  bm-outcome show <issue>           Show outcome for specific issue"
-    echo "  bm-outcome stats                  Show aggregate statistics"
-    echo "  bm-outcome stats --by-approach    Stats grouped by approach"
-    echo "  bm-outcome stats --by-tag         Stats grouped by tag"
-    echo "  bm-outcome stats --by-complexity  Stats grouped by complexity"
-    echo "  bm-outcome recent [n]             Show n most recent outcomes"
+    echo "  bdx-outcome show <issue>           Show outcome for specific issue"
+    echo "  bdx-outcome stats                  Show aggregate statistics"
+    echo "  bdx-outcome stats --by-approach    Stats grouped by approach"
+    echo "  bdx-outcome stats --by-tag         Stats grouped by tag"
+    echo "  bdx-outcome stats --by-complexity  Stats grouped by complexity"
+    echo "  bdx-outcome recent [n]             Show n most recent outcomes"
     echo ""
     echo "Examples:"
-    echo "  bm-outcome record impact-abc --success --approach research-first --complexity medium"
-    echo "  bm-outcome stats --by-approach"
+    echo "  bdx-outcome record impact-abc --success --approach research-first --complexity medium"
+    echo "  bdx-outcome stats --by-approach"
     echo ""
 }
 
@@ -372,7 +372,7 @@ case "${1:-}" in
         done
 
         if [ -z "$issue" ]; then
-            echo "Usage: bm-outcome record <issue> [options]"
+            echo "Usage: bdx-outcome record <issue> [options]"
             exit 1
         fi
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# bm-search - Enhanced search across all AgentMem data
+# bdx-search - Enhanced search across all AgentMem data
 #
 # Features:
 # - Fuzzy matching (finds similar words)
@@ -8,14 +8,14 @@
 # - Searches context, outcomes, and issue titles
 
 show_help() {
-    echo "bm-search - Enhanced search across all AgentMem data"
+    echo "bdx-search - Enhanced search across all AgentMem data"
     echo ""
     echo "Usage:"
-    echo "  bm-search <query>              Search for term(s)"
-    echo "  bm-search <term1> <term2>      Search for multiple terms (AND)"
-    echo "  bm-search --or <term1> <term2> Search with OR logic"
-    echo "  bm-search --fuzzy <query>      Enable fuzzy matching"
-    echo "  bm-search --type <type>        Filter by: note, finding, decision, outcome"
+    echo "  bdx-search <query>              Search for term(s)"
+    echo "  bdx-search <term1> <term2>      Search for multiple terms (AND)"
+    echo "  bdx-search --or <term1> <term2> Search with OR logic"
+    echo "  bdx-search --fuzzy <query>      Enable fuzzy matching"
+    echo "  bdx-search --type <type>        Filter by: note, finding, decision, outcome"
     echo ""
     echo "Options:"
     echo "  -h, --help                     Show this help message"
@@ -25,11 +25,11 @@ show_help() {
     echo "  --limit <n>                    Limit results (default: 20)"
     echo ""
     echo "Examples:"
-    echo "  bm-search postgres             Find mentions of postgres"
-    echo "  bm-search database migration   Find entries with both terms"
-    echo "  bm-search --or redis postgres  Find entries with either term"
-    echo "  bm-search --fuzzy postgre      Fuzzy match (finds postgres)"
-    echo "  bm-search --type decision sql  Find decisions about SQL"
+    echo "  bdx-search postgres             Find mentions of postgres"
+    echo "  bdx-search database migration   Find entries with both terms"
+    echo "  bdx-search --or redis postgres  Find entries with either term"
+    echo "  bdx-search --fuzzy postgre      Fuzzy match (finds postgres)"
+    echo "  bdx-search --type decision sql  Find decisions about SQL"
     exit 0
 }
 

@@ -1,18 +1,18 @@
 #!/bin/bash
-# bm-stats - Visualize outcomes with ASCII charts
+# bdx-stats - Visualize outcomes with ASCII charts
 #
 # Shows trends, patterns, and insights from completed work
 
 show_help() {
-    echo "bm-stats - Visualize outcomes with ASCII charts"
+    echo "bdx-stats - Visualize outcomes with ASCII charts"
     echo ""
     echo "Usage:"
-    echo "  bm-stats                    Full dashboard"
-    echo "  bm-stats summary            Quick summary stats"
-    echo "  bm-stats approaches         Success rate by approach (bar chart)"
-    echo "  bm-stats complexity         Success rate by complexity"
-    echo "  bm-stats timeline           Outcomes over time"
-    echo "  bm-stats streak             Current success/failure streak"
+    echo "  bdx-stats                    Full dashboard"
+    echo "  bdx-stats summary            Quick summary stats"
+    echo "  bdx-stats approaches         Success rate by approach (bar chart)"
+    echo "  bdx-stats complexity         Success rate by complexity"
+    echo "  bdx-stats timeline           Outcomes over time"
+    echo "  bdx-stats streak             Current success/failure streak"
     echo ""
     echo "Options:"
     echo "  -h, --help                  Show this help message"
@@ -43,7 +43,7 @@ fi
 
 if [ ! -f "$OUTCOMES_FILE" ]; then
     echo -e "${YELLOW}No outcomes recorded yet.${NC}"
-    echo "Use 'bm-outcome record <issue>' when closing issues."
+    echo "Use 'bdx-outcome record <issue>' when closing issues."
     exit 0
 fi
 

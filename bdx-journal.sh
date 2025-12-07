@@ -1,18 +1,18 @@
 #!/bin/bash
-# bm-journal - Interactive JOURNAL.md setup and management
+# bdx-journal - Interactive JOURNAL.md setup and management
 #
 # Creates a rich, guided JOURNAL.md template based on project type
 
 show_help() {
-    echo "bm-journal - Interactive JOURNAL.md setup and management"
+    echo "bdx-journal - Interactive JOURNAL.md setup and management"
     echo ""
     echo "Usage:"
-    echo "  bm-journal init              Interactive setup for new projects"
-    echo "  bm-journal init --template <name>  Use a specific template"
-    echo "  bm-journal show              Show current journal"
-    echo "  bm-journal add-pref \"text\"   Add a user preference"
-    echo "  bm-journal add-decision \"what\" \"why\"  Add a key decision"
-    echo "  bm-journal add-note \"text\"   Add a session note"
+    echo "  bdx-journal init              Interactive setup for new projects"
+    echo "  bdx-journal init --template <name>  Use a specific template"
+    echo "  bdx-journal show              Show current journal"
+    echo "  bdx-journal add-pref \"text\"   Add a user preference"
+    echo "  bdx-journal add-decision \"what\" \"why\"  Add a key decision"
+    echo "  bdx-journal add-note \"text\"   Add a session note"
     echo ""
     echo "Templates:"
     echo "  minimal     - Just the basics (preferences, decisions)"
@@ -308,7 +308,7 @@ init_interactive() {
     echo ""
     echo "Next steps:"
     echo "  1. Edit $JOURNAL to add your preferences"
-    echo "  2. Run 'bm-prime' to see it in action"
+    echo "  2. Run 'bdx-prime' to see it in action"
     echo ""
 }
 
@@ -339,7 +339,7 @@ show_journal() {
     check_beads
 
     if [ ! -f "$JOURNAL" ]; then
-        echo -e "${YELLOW}No JOURNAL.md found. Run 'bm-journal init' to create one.${NC}"
+        echo -e "${YELLOW}No JOURNAL.md found. Run 'bdx-journal init' to create one.${NC}"
         exit 0
     fi
 
@@ -352,7 +352,7 @@ add_preference() {
     check_beads
 
     if [ ! -f "$JOURNAL" ]; then
-        echo -e "${RED}No JOURNAL.md found. Run 'bm-journal init' first.${NC}"
+        echo -e "${RED}No JOURNAL.md found. Run 'bdx-journal init' first.${NC}"
         exit 1
     fi
 
@@ -376,7 +376,7 @@ add_decision() {
     check_beads
 
     if [ ! -f "$JOURNAL" ]; then
-        echo -e "${RED}No JOURNAL.md found. Run 'bm-journal init' first.${NC}"
+        echo -e "${RED}No JOURNAL.md found. Run 'bdx-journal init' first.${NC}"
         exit 1
     fi
 
@@ -400,7 +400,7 @@ add_note() {
     check_beads
 
     if [ ! -f "$JOURNAL" ]; then
-        echo -e "${RED}No JOURNAL.md found. Run 'bm-journal init' first.${NC}"
+        echo -e "${RED}No JOURNAL.md found. Run 'bdx-journal init' first.${NC}"
         exit 1
     fi
 

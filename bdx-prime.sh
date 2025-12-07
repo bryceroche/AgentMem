@@ -1,6 +1,6 @@
 #!/bin/bash
-# bm-prime - Enhanced session startup
-# Usage: bm-prime
+# bdx-prime - Enhanced session startup
+# Usage: bdx-prime
 #
 # Loads everything needed to resume work:
 # - Journal (preferences, decisions, session notes)
@@ -9,9 +9,9 @@
 # - Recent changes
 
 show_help() {
-    echo "bm-prime - Load session context for AI coding agents"
+    echo "bdx-prime - Load session context for AI coding agents"
     echo ""
-    echo "Usage: bm-prime [options]"
+    echo "Usage: bdx-prime [options]"
     echo ""
     echo "Options:"
     echo "  -h, --help    Show this help message"
@@ -283,18 +283,18 @@ echo -e "${YELLOW}Record a DECISION when you:${NC}"
 echo "  • Choose between approaches (e.g., 'Using X instead of Y')"
 echo "  • Make architecture choices (e.g., 'Put this in services/ not utils/')"
 echo "  • Pick a library or tool (e.g., 'Using lodash for deep merge')"
-echo "  → bm-context <issue> --add-decision \"<what>\" --why \"<reason>\""
+echo "  → bdx-context <issue> --add-decision \"<what>\" --why \"<reason>\""
 echo ""
 echo -e "${YELLOW}Record a FINDING when you:${NC}"
 echo "  • Discover how existing code works"
 echo "  • Find undocumented behavior or gotchas"
 echo "  • Learn something that took effort to figure out"
-echo "  → bm-context <issue> --add-finding \"<discovery>\" --confidence high|medium|low"
+echo "  → bdx-context <issue> --add-finding \"<discovery>\" --confidence high|medium|low"
 echo ""
 echo -e "${YELLOW}Record an OUTCOME when you:${NC}"
 echo "  • Close an issue (success or failure)"
 echo "  • Complete a task to learn what worked"
-echo "  → bm-outcome record <issue> --success|--failure"
+echo "  → bdx-outcome record <issue> --success|--failure"
 echo ""
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -305,8 +305,8 @@ echo ""
 echo "Quick commands:"
 echo "  bd ready                    - Issues ready to work"
 echo "  bd show <id>                - View issue details"
-echo "  bm-context <id>             - View/add rich context"
-echo "  bm-outcome stats            - View outcome statistics"
-echo "  bm-search <query>           - Search all context"
-echo "  bm-stats                    - View outcomes dashboard"
+echo "  bdx-context <id>             - View/add rich context"
+echo "  bdx-outcome stats            - View outcome statistics"
+echo "  bdx-search <query>           - Search all context"
+echo "  bdx-stats                    - View outcomes dashboard"
 echo ""
