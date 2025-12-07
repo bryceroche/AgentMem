@@ -38,6 +38,9 @@ CONTEXT=".beads/context.json"
 DB=".beads/beads.db"
 SCRIPTS_DIR="$(dirname "$0")"
 
+# Track usage
+source "$SCRIPTS_DIR/bdx-track.sh" 2>/dev/null && track_usage "bdx-prime" "" "$@"
+
 # Colors
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'

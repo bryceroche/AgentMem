@@ -10,6 +10,8 @@
 
 JOURNAL=".beads/JOURNAL.md"
 CONTEXT=".beads/context.json"
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-prime-plus" "" "$@"
 DB=".beads/beads.db"
 SCRIPTS_DIR="$(dirname "$0")"
 

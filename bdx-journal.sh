@@ -32,6 +32,8 @@ esac
 
 JOURNAL=".beads/JOURNAL.md"
 
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-journal" "" "$@"
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'

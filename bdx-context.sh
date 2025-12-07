@@ -35,6 +35,8 @@ case "$1" in
     -h|--help) show_help ;;
 esac
 
+# Track usage
+source "$(dirname "$0")/bdx-track.sh" 2>/dev/null && track_usage "bdx-context" "" "$@"
 DB=".beads/beads.db"
 CONTEXT_FILE=".beads/context.json"
 OUTCOMES_FILE=".beads/outcomes.jsonl"
